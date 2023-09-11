@@ -8,12 +8,14 @@ class Roles
     private int     $roleId;
     private string  $roleName;
 
-    public function __construct(?int $roleId, string $roleName)
+    public function __construct(?int $roleId, ?string $roleName)
     {
         if($roleId != null) {
             $this->roleId = $roleId;
         }
-        $this->roleName = $roleName;
+        if($roleName != null) {
+            $this->roleName = $roleName;
+        }
     }
     public function getRoleId(): int
     {
